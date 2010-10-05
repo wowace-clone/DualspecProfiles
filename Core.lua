@@ -202,25 +202,32 @@ function mod:FindAce3Addon(addonname)
 		self:RegisterAce3Addon(addonname, objectdb)
 	end
 end
+local AceLibrary = AceLibrary
+if AceLibrary then
+	local ace2 = AceLibrary("AceAddon-2.0")
+	local ace2mod = AceLibrary("AceModuleCore-2.0")
+	function mod:FindAce2Addon(addonname)
+		local object = ace2.addons[addonname]
+		if not object then return end
+		if ace2mod:IsModule(object) then return end
 
-local ace2 = AceLibrary("AceAddon-2.0")
-local ace2mod = AceLibrary("AceModuleCore-2.0")
-function mod:FindAce2Addon(addonname)
-	local object = ace2.addons[addonname]
-	if not object then return end
-	if ace2mod:IsModule(object) then return end
-
-	local objectdb = object.db
-	self:RegisterAce2Addon(addonname, objectdb)
+		local objectdb = object.db
+		self:RegisterAce2Addon(addonname, objectdb)
+	end
+else
+	function mod:FindAce2Addon()
+	end
 end
 
 function mod:PLAYER_LOGIN()
 	for name, object in aceAddon3:IterateAddons() do
 		self:FindAce3Addon(name)
 	end
-	for k, v in pairs(ace2.addons) do
-		if not ace2mod:IsModule(v) and v.db and type(k) == 'string' then
-			self:RegisterAce2Addon(k, v)
+	if ace2 then
+		for k, v in pairs(ace2.addons) do
+			if not ace2mod:IsModule(v) and v.db and type(k) == 'string' then
+				self:RegisterAce2Addon(k, v)
+			end
 		end
 	end
 	mod:RegisterEvent("ADDON_LOADED")
