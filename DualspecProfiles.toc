@@ -6,8 +6,7 @@
 
 ## SavedVariables: DualspecProfilesDB
 
-libs\LibStub\LibStub.lua
-libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+embeds.xml
 
 Core.lua
 
