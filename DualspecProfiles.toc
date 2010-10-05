@@ -1,0 +1,14 @@
+﻿## Interface: 30300
+## Title: Dualspec Profiles
+## Notes: Automatically changes profiles when changing spec
+## Author: profalbert
+## X-License: All rights reserved.
+
+## SavedVariables: DualspecProfilesDB
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+
+Core.lua
+
+
