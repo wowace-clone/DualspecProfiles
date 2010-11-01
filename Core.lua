@@ -203,10 +203,7 @@ function mod:FindAce3Addon(addonname)
 	end
 end
 local AceLibrary = AceLibrary
-if AceLibrary then
-	if not AceLibrary:HasInstance("AceAddon-2.0") or not AceLibrary:HasInstance("AceModuleCore-2.0") then
-		return
-	end
+if AceLibrary and AceLibrary:HasInstance("AceAddon-2.0") and AceLibrary:HasInstance("AceModuleCore-2.0") then
 	local ace2 = AceLibrary("AceAddon-2.0")
 	local ace2mod = AceLibrary("AceModuleCore-2.0")
 	function mod:FindAce2Addon(addonname)
