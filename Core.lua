@@ -45,7 +45,7 @@ local function switchAce2Profile(addon, supposed)
 end
 
 function mod:PLAYER_TALENT_UPDATE()
-	local current_talents = GetActiveTalentGroup()
+	local current_talents = GetActiveSpecGroup()
 	for k,v in pairs(db.profile.addons) do
 		if v.enabled then
 			local supposed = v[current_talents]
