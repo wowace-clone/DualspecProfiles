@@ -11,7 +11,7 @@ local defaults = {
 }
 
 function mod:OnInitialize()
-	db = LibStub("AceDB-3.0"):New("Bartender4DualspecDB", defaults)
+	db = LibStub("AceDB-3.0"):New("DualspecProfilesDB", defaults)
 	self:RegisterEvent("PLAYER_LOGIN")
 end
 
