@@ -1,4 +1,4 @@
-﻿## Interface: 50200
+﻿## Interface: 60000
 ## Title: Dualspec Profiles
 ## Notes: Automatically changes profiles when changing spec
 ## Author: profalbert
